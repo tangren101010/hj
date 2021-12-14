@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加个人信息</title>
+    <link href="css/project.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul>
+    <liup><a class="dropbtn" href="/tomain">主页</a></liup>
+    <div class="dropdown">
+        <a class="dropbtn">户籍操作</a>
+        <div class="dropdown-content">
+            <a href="/tohj">查询户籍</a>
+            <a href="/toallhj">查看所有户籍</a>
+            <a href="/zxhj">注销户籍</a>
+            <a href="/toInsertHj">添加户籍</a>
+            <a href="/toallzx">查询所有注销户籍信息</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a class="dropbtn">个人信息操作</a>
+        <div class="dropdown-content">
+            <a href="/toAllPerson">查询所有的个人信息</a>
+            <a href="/toSelectPerson">查询个人信息</a>
+            <a href="/toInsertPerson">添加个人信息</a>
+            <a href="/todeletePerson">删除个人信息</a>
+            <a href="/tofindallpersonbyhj">查找同一户籍下的所有人</a>
+        </div>
+    </div>
+    <lrup><a href="/tologin">退出</a></lrup>
+</ul>
+<form action="/InsertPerson" method="post">
+    <h1>添加个人信息</h1>
+    姓名：<input type="text" id="name" name="name" required=""><br>
+    身份证：<input type="text" id="sfz" name="sfz" required=""><br>
+    性别：<input type="text" id="sex" name="sex" required=""><br>
+    年龄：<input type="text" id="age" name="age" required=""><br>
+    户籍ID：<input type="text" id="hjid" name="hjid" required=""><br>
+    <input type="submit" id="Insert" value="添加个人信息">
+</form>
+</body>
+</html>

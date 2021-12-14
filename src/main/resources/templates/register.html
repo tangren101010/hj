@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="css/register.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form action="/Register" method="post">
+    <div class="box">
+        <div class="inputBox">
+            <input type="text" name="id" required="">
+            <label>用户ID</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="name" required="">
+            <label>用户名</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" required="">
+            <label>用户密码</label>
+        </div>
+
+        <input type="submit" id="register" value="注册">
+        <input type="button" onclick="window.location.href='/tologin'" value="返回登录界面">
+        <p th:if="${msg}=='错误'">
+            <script>window.alert("用户已存在")</script>
+        </p>
+    </div>
+</form>
+</body>
+</html>

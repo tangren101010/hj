@@ -1,0 +1,36 @@
+.qwer {
+    margin: 0 auto;
+    margin-top: 20px;
+    list-style: none;
+    /*background-color: #03a9f4;*/
+}
+
+.qwer .asdf {
+    margin-bottom: 30px;
+    height: 40px;
+    text-align: center;
+}
+
+.qwer .asdf label {
+    float: left;
+    width: 105px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.qwer .asdf input[type="text"] {
+    float: left;
+    width: 240px;
+    height: 37px;
+    border: 1px solid #ccc;
+}
+
+.qwer .asdf input[type="submit"] {
+    float: left;
+    width: 60px;
+    height: 40px;
+    margin-left: 40px;
+}
+

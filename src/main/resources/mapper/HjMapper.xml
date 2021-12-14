@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.test.mapper.HjMapper">
+    <select id="findBysfz" resultType="com.example.test.bean.HjBean">
+        SELECT *
+        FROM 户籍表
+        WHERE sfz = #{sfz}
+    </select>
+    <insert id="InsertDeleteHj" parameterType="com.example.test.bean.HjBean">
+        insert into 户籍注销表(id, yy, sfz)
+        values (#{id}, #{zxyy}, #{sfz})
+    </insert>
+    <delete id="delete" parameterType="com.example.test.bean.HjBean">
+        delete
+        from 户籍表
+        where id = #{id}
+    </delete>
+    <select id="findByid" resultType="com.example.test.bean.HjBean">
+        SELECT *
+        FROM 户籍表
+        WHERE id = #{id}
+    </select>
+    <select id="findzx" resultType="com.example.test.bean.HjBean">
+        SELECT *
+        FROM 户籍注销表
+        WHERE id = #{id}
+    </select>
+    <insert id="InsertHj" parameterType="com.example.test.bean.HjBean">
+        insert into 户籍表(id, hj, sfz)
+        values (#{id}, #{hj}, #{sfz})
+    </insert>
+    <select id="findallzx" resultType="com.example.test.bean.HjBean">
+        select *
+        from 户籍注销表
+    </select>
+    <select id="findallhj" resultType="com.example.test.bean.HjBean">
+        select *
+        from 户籍表
+    </select>
+</mapper>

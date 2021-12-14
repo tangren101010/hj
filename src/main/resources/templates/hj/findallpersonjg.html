@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<!--解决thymeleaf报错-->
+<head>
+    <meta charset="UTF-8">
+    <title>查找同一户籍的所有用户</title>
+    <link href="css/project.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul>
+    <liup><a class="dropbtn" href="/tomain">主页</a></liup>
+    <div class="dropdown">
+        <a class="dropbtn">户籍操作</a>
+        <div class="dropdown-content">
+            <a href="/tohj">查询户籍</a>
+            <a href="/toallhj">查看所有户籍</a>
+            <a href="/zxhj">注销户籍</a>
+            <a href="/toInsertHj">添加户籍</a>
+            <a href="/toallzx">查询所有注销户籍信息</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a class="dropbtn">个人信息操作</a>
+        <div class="dropdown-content">
+            <a href="/toAllPerson">查询所有的个人信息</a>
+            <a href="/toSelectPerson">查询个人信息</a>
+            <a href="/toInsertPerson">添加个人信息</a>
+            <a href="/todeletePerson">删除个人信息</a>
+            <a href="/tofindallpersonbyhj">查找同一户籍下的所有人</a>
+        </div>
+    </div>
+    <lrup><a href="/tologin">退出</a></lrup>
+</ul>
+<form action="/findallperson" method="post">
+    <h1>请输入户籍ID进行查询</h1>
+    户籍ID：<input type="text" name="id" required="">
+    <input type="submit" value="查询">
+</form>
+<br>
+<h2>该户籍信息</h2>
+<table id="goods">
+    <tr>
+        <th>户籍ID</th>
+        <th>户籍地址</th>
+        <th>户主姓名</th>
+        <th>户主身份证</th>
+    </tr>
+    <tr>
+        <th th:text="${hj.id}"></th>
+        <th th:text="${hj.hj}"></th>
+        <th th:text="${hzname}"></th>
+        <th th:text="${hj.sfz}"></th>
+    </tr>
+</table>
+<h2>该户籍的所有用户</h2>
+<table id="goods">
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>身份证</th>
+    </tr>
+    <tr th:each="person:${persons}">
+        <th th:text="${person.name}"></th>
+        <th th:text="${person.sex}"></th>
+        <th th:text="${person.age}"></th>
+        <th th:text="${person.sfz}"></th>
+    </tr>
+</table>
+
+</body>
+</html>
